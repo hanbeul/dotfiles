@@ -11,11 +11,12 @@ if has ('gui_macvim')
   macmenu File.New\ Tab key=<nop>
   macmenu File.Close key=<nop>
   macmenu File.Open\.\.\. key=<nop>
+  macmenu File.Print key=<nop>
   nmap <silent> <D-o> :NERDTreeToggle<CR>
   nmap <silent> <D-w> :bd<CR>
   nnoremap <D-j> <c-e>
   nnoremap <D-k> <c-y>
-  nnoremap <D-p> <c-p>
+  nnoremap <D-p> :Files<CR>
 
 endif
 

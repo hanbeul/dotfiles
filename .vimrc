@@ -13,6 +13,15 @@ set hidden
 set hlsearch
 set gdefault
 
+" Make .vue files have .html rules applied to them
+let html_no_rendering=1
+"autocmd BufRead,BufNewFile *.vue setfiletype html
+"au BufNewFile,BufRead *.vue setf vue
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+
+set ttymouse=xterm2
+set mouse=a
+
 " When scrolling with cursor, keeps cursor 5lines from top or bottom
 set scrolloff=10
 
@@ -35,16 +44,18 @@ Plug 'junegunn/fzf.vim'   " FZF
 
 Plug 'tpope/vim-surround' "Plugin for surrounding characters like ( { [ ' 
 Plug 'Raimondi/delimitMate' "Automatically closes quotes parenthesis etc
-Plug 'scrooloose/syntastic' "Syntax checker/linter
+Plug 'alvan/vim-closetag' "Automatically close html/XML tags
+"Plug 'scrooloose/syntastic' "Syntax checker/linter
 Plug 'yggdroot/indentline' " Show indent level lines
 Plug 'scrooloose/nerdcommenter' " Comment code in multiple languages
-Plug 'jiangmiao/auto-pairs' " Automatically close tags
+"Plug 'jiangmiao/auto-pairs' " Automatically close tags
 
-Plug 'isRuslan/vim-es6' "ES6 Syntax highlighting
-Plug 'dag/vim-fish' "Support for fish shell script syntax highlighting
-Plug 'posva/vim-vue' "Syntax support for VueJS
-Plug 'leafgarland/typescript-vim' 
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'sheerun/vim-polyglot' "Collection of language packs for Vim
+"Plug 'isRuslan/vim-es6' "ES6 Syntax highlighting
+"Plug 'dag/vim-fish' "Support for fish shell script syntax highlighting
+"Plug 'posva/vim-vue' "Syntax support for VueJS
+"Plug 'leafgarland/typescript-vim' 
+"Plug 'mustache/vim-mustache-handlebars'
 
 
 call plug#end()
@@ -69,6 +80,12 @@ function! YcmOnDeleteChar()
   return "" 
 endfunction
 " ----------------------------------------------------------------
+
+" CloseTag settings
+" Fix conflict between delimitmate and closetag
+let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php"
+au FileType xml,html,phtml,php,xhtml,js let b:delimitMate_matchpairs = "(:),[:],{:}"
+
 
 " Set directory so swp files are stored there
 silent !mkdir ~/.vim/swp/ > /dev/null 2>&1
@@ -105,9 +122,9 @@ if has("autocmd")
 endif
 
 " Syntastic check settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
