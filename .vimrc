@@ -19,8 +19,10 @@ let html_no_rendering=1
 "au BufNewFile,BufRead *.vue setf vue
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
 
-set ttymouse=xterm2
-set mouse=a
+if !has('nvim')
+  set ttymouse=xterm2
+  set mouse=a
+endif
 
 " When scrolling with cursor, keeps cursor 5lines from top or bottom
 set scrolloff=10
@@ -36,7 +38,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai' "Molokai Theme for Gui (MacVim)
 
 Plug 'scrooloose/nerdtree' "Filetree Browser
-Plug 'w0rp/ale' "Asynchronous Linting Engine
+Plug 'dense-analysis/ale' "Asynchronous Linting Engine
+
 "Plug 'vim-airline/vim-airline' "Statusbar 
 Plug 'itchyny/lightline.vim' " Statusbar
 Plug '/usr/local/opt/fzf' " FZF - Support for fuzzy file/buffer searching
@@ -60,6 +63,10 @@ Plug 'sheerun/vim-polyglot' "Collection of language packs for Vim
 
 call plug#end()
 " ----------------------------------------------------------------------------------------------------------------
+
+" ALE Settings
+"let g:ale_completion_enabled = 1
+nnoremap <silent> <leader>ag :ALEGoToDefinition<CR>
 
 " Color Schemes
 colorscheme molokai
@@ -121,17 +128,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" Syntastic check settings
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = { "type": "style" }
-
 " ------Persistent Undo History------
 silent !mkdir ~/.vim/undo/ > /dev/null 2>&1
 set undofile
@@ -142,6 +138,9 @@ set undoreload=10000
 "-----Key Bindings-----
 " Remap remap jj to ESC
 inoremap jj <ESC>
+
+" Leader + \ or - to split
+nnoremap <silent> <leader>w <c-w>
 
 " Map Ctrl j and k to scroll up and down 1 line at a time
 nnoremap <c-j> <c-e>
