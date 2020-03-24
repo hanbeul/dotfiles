@@ -12,6 +12,7 @@ set incsearch
 set hidden
 set hlsearch
 set gdefault
+set autoread
 
 " Make .vue files have .html rules applied to them
 let html_no_rendering=1
@@ -53,7 +54,8 @@ Plug 'yggdroot/indentline' " Show indent level lines
 Plug 'scrooloose/nerdcommenter' " Comment code in multiple languages
 "Plug 'jiangmiao/auto-pairs' " Automatically close tags
 
-Plug 'sheerun/vim-polyglot' "Collection of language packs for Vim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'sheerun/vim-polyglot' "Collection of language packs for Vim
 "Plug 'isRuslan/vim-es6' "ES6 Syntax highlighting
 "Plug 'dag/vim-fish' "Support for fish shell script syntax highlighting
 "Plug 'posva/vim-vue' "Syntax support for VueJS
@@ -170,3 +172,5 @@ let NERDTreeQuitOnOpen=1
 " Map Ctrl-p to fuzzy find files in current directory
 map <silent> <C-p> :Files<CR>
 map <silent> <a-tab> :Buffers<cr>
+
+so ~/.vim/coc.vim
