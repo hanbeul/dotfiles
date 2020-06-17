@@ -15,6 +15,12 @@ set $mod Mod4
 # is used in the bar {} block below.
 font Terminus
 
+
+# class                 border  backgr. text    indicator child_border                                                                     
+client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340                                                                            
+client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340                                                                            
+client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #d9d9d9       
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
