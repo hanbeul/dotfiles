@@ -194,8 +194,8 @@ bindsym XF86AudioMute exec --no-startup-id exec pulseaudio-ctl mute
 
 bindsym $mod+Control+q exec --no-startup-id exec i3lock-fancy
 #bindsym $mod+Control+q exec --no-startup-id exec bash XSECURELOCK_PASSWORD_PROMPT=asterisks XSECURELOCK_NO_COMPOSITE=1 xsecurelock
-#bindsym $mod+n exec --no-startup-id exec nautilus
-bindsym $mod+n exec --no-startup-id exec thunar
+bindsym $mod+n exec --no-startup-id exec nautilus
+#bindsym $mod+n exec --no-startup-id exec thunar
 
 # Scratchpad bindings
 bindsym $mod+BackSpace move scratchpad
