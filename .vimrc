@@ -41,8 +41,8 @@ Plug 'tomasr/molokai' "Molokai Theme for Gui (MacVim)
 Plug 'scrooloose/nerdtree' "Filetree Browser
 Plug 'dense-analysis/ale' "Asynchronous Linting Engine
 
-"Plug 'vim-airline/vim-airline' "Statusbar 
-Plug 'itchyny/lightline.vim' " Statusbar
+Plug 'vim-airline/vim-airline' "Statusbar 
+"Plug 'itchyny/lightline.vim' " Statusbar
 Plug '/usr/local/opt/fzf' " FZF - Support for fuzzy file/buffer searching
 Plug 'junegunn/fzf.vim'   " FZF
 

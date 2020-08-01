@@ -2,7 +2,7 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 "Set the guifont
-set guifont=Terminus\ (TTF):h14
+set guifont=Terminus\ 12
 
 "Mac Config
 if has ('gui_macvim')
