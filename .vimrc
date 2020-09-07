@@ -171,6 +171,6 @@ let NERDTreeQuitOnOpen=1
 
 " Map Ctrl-p to fuzzy find files in current directory
 map <silent> <C-p> :Files<CR>
-map <silent> <a-tab> :Buffers<cr>
+map <silent> <C-P> :Buffers<cr>
 
 so ~/.vim/coc.vim
