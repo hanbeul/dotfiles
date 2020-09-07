@@ -20,9 +20,10 @@ let html_no_rendering=1
 "au BufNewFile,BufRead *.vue setf vue
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
 
+" Enable mouse support
+set mouse=a
 if !has('nvim')
   set ttymouse=xterm2
-  set mouse=a
 endif
 
 " When scrolling with cursor, keeps cursor 5lines from top or bottom
