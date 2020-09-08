@@ -44,8 +44,8 @@ Plug 'dense-analysis/ale' "Asynchronous Linting Engine
 
 Plug 'vim-airline/vim-airline' "Statusbar 
 "Plug 'itchyny/lightline.vim' " Statusbar
-Plug '/usr/local/opt/fzf' " FZF - Support for fuzzy file/buffer searching
-Plug 'junegunn/fzf.vim'   " FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'tpope/vim-surround' "Plugin for surrounding characters like ( { [ ' 
 Plug 'Raimondi/delimitMate' "Automatically closes quotes parenthesis etc
@@ -55,6 +55,11 @@ Plug 'yggdroot/indentline' " Show indent level lines
 Plug 'scrooloose/nerdcommenter' " Comment code in multiple languages
 "Plug 'jiangmiao/auto-pairs' " Automatically close tags
 
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'sheerun/vim-polyglot' "Collection of language packs for Vim
 "Plug 'isRuslan/vim-es6' "ES6 Syntax highlighting
@@ -63,9 +68,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'leafgarland/typescript-vim' 
 "Plug 'mustache/vim-mustache-handlebars'
 
+Plug 'christoomey/vim-tmux-navigator'
+
 
 call plug#end()
 " ----------------------------------------------------------------------------------------------------------------
+
+function CloseBuffer() 
+  execute ':bp|bd #'
+endfunction
+
+
 
 " ALE Settings
 "let g:ale_completion_enabled = 1
@@ -156,7 +169,7 @@ nnoremap <s-u> :redo <CR>
 " Map tab and shift-tab to scroll through the next and previous buffers respectively
 nnoremap  <silent> <c-tab> :bnext<CR>
 nnoremap  <silent> <c-s-tab> :bprevious<CR>
-nnoremap  <silent> <c-w> :bd<CR>
+nnoremap  <silent> <c-w> :call CloseBuffer()<CR>
 nnoremap  <silent> <D-0>  :set guifont=Terminus\ (TTF):h14<CR>
 
 " Keys to navigate between splits
@@ -166,9 +179,21 @@ nnoremap <silent> ∆ :wincmd j<CR>
 nnoremap <silent> ˚ :wincmd k<CR>
 nnoremap <silent> ¬ :wincmd l<CR>
 
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <a-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <a-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <a-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <a-l> :TmuxNavigateRight<cr>
+
+nnoremap <silent> ˙ :TmuxNavigateLeft<cr>
+nnoremap <silent> ∆ :TmuxNavigateDown<cr>
+nnoremap <silent> ˚ :TmuxNavigateUp<cr>
+nnoremap <silent> ¬ :TmuxNavigateRight<cr>
+
 " NERD Tree File manager toggle on ctrl-b
 map <C-o> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 
 " Map Ctrl-p to fuzzy find files in current directory
 map <silent> <C-p> :Files<CR>

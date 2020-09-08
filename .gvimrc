@@ -13,7 +13,7 @@ if has ('gui_macvim')
   macmenu File.Open\.\.\. key=<nop>
   macmenu File.Print key=<nop>
   nmap <silent> <D-o> :NERDTreeToggle<CR>
-  nmap <silent> <D-w> :bd<CR>
+  nmap <silent> <D-w> :call CloseBuffer()<CR>
   nnoremap <D-j> <c-e>
   nnoremap <D-k> <c-y>
   nnoremap <D-p> :Files<CR>
