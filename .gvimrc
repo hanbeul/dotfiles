@@ -6,6 +6,9 @@ set guifont=Terminus\ 12
 
 "Mac Config
 if has ('gui_macvim')
+  "Set the guifont for Macvim
+  set guifont=Terminus\ (TTF):h16
+
   macmenu Window.Select\ Previous\ Tab  key=<nop>
   macmenu Window.Select\ Next\ Tab      key=<nop>
   macmenu File.New\ Tab key=<nop>
@@ -17,7 +20,7 @@ if has ('gui_macvim')
   nnoremap <D-j> <c-e>
   nnoremap <D-k> <c-y>
   nnoremap <D-p> :Files<CR>
-
+  nnoremap <D-P> :Buffers<CR>
 endif
 
 " Keys to navigate between splits
