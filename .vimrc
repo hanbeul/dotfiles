@@ -37,7 +37,8 @@ endif
 
 " ----------------------------------------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'tomasr/molokai' "Molokai Theme for Gui (MacVim)
+"Plug 'tomasr/molokai' "Molokai Theme for Gui (MacVim)
+Plug 'phanviet/vim-monokai-pro'
 
 Plug 'scrooloose/nerdtree' "Filetree Browser
 Plug 'dense-analysis/ale' "Asynchronous Linting Engine
@@ -85,13 +86,13 @@ endfunction
 nnoremap <silent> <leader>ag :ALEGoToDefinition<CR>
 
 " Color Schemes
-colorscheme molokai
-if has ('gui_running')
-  colorscheme molokai
-  let g:molokai_original = 0
-else 
-  "colorscheme lanox
-endif
+colorscheme monokai_pro
+"if has ('gui_running')
+"  colorscheme monokai_pro
+"  let g:molokai_original = 0
+"else 
+"  "colorscheme lanox
+"endif
 
 " Temporary YouCompleteMe/DelimitMate backspace issue workaround
 " ----------------------------------------------------------------
@@ -167,10 +168,10 @@ nnoremap <c-r> <NOP>
 nnoremap <s-u> :redo <CR>
 
 " Map tab and shift-tab to scroll through the next and previous buffers respectively
-nnoremap  <silent> <c-tab> :bnext<CR>
-nnoremap  <silent> <c-s-tab> :bprevious<CR>
-nnoremap  <silent> <c-w> :call CloseBuffer()<CR>
-nnoremap  <silent> <D-0>  :set guifont=Terminus\ (TTF):h14<CR>
+nnoremap <silent> gl :bnext<CR>
+nnoremap <silent> gh :bprevious<CR>
+nnoremap <silent> <c-w> :call CloseBuffer()<CR>
+nnoremap <silent> <D-0>  :set guifont=Terminus\ (TTF):h14<CR>
 
 " Keys to navigate between splits
 " Characters are generated with option+<key> on macOS keyboard
@@ -192,11 +193,11 @@ nnoremap <silent> ˚ :TmuxNavigateUp<cr>
 nnoremap <silent> ¬ :TmuxNavigateRight<cr>
 
 " NERD Tree File manager toggle on ctrl-b
-map <C-o> :NERDTreeToggle<CR>
+nnoremap <silent> <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=0
 
 " Map Ctrl-p to fuzzy find files in current directory
 map <silent> <C-p> :Files<CR>
-map <silent> <C-P> :Buffers<cr>
+map <silent> <C-p><C-p> :Buffers<cr>
 
 so ~/.vim/coc.vim
