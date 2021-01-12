@@ -14,6 +14,8 @@ set hlsearch
 set gdefault
 set autoread
 
+set termguicolors
+
 " Make .vue files have .html rules applied to them
 let html_no_rendering=1
 "autocmd BufRead,BufNewFile *.vue setfiletype html
@@ -37,7 +39,7 @@ endif
 
 " ----------------------------------------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-"Plug 'tomasr/molokai' "Molokai Theme for Gui (MacVim)
+Plug 'tomasr/molokai' "Molokai Theme for Gui (MacVim)
 Plug 'phanviet/vim-monokai-pro'
 
 Plug 'scrooloose/nerdtree' "Filetree Browser
@@ -87,6 +89,7 @@ nnoremap <silent> <leader>ag :ALEGoToDefinition<CR>
 
 " Color Schemes
 colorscheme monokai_pro
+"colorscheme molokai
 "if has ('gui_running')
 "  colorscheme monokai_pro
 "  let g:molokai_original = 0
@@ -107,7 +110,7 @@ endfunction
 
 " CloseTag settings
 " Fix conflict between delimitmate and closetag
-let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php"
+let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.jsx,*.tsx"
 au FileType xml,html,phtml,php,xhtml,js let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
@@ -194,7 +197,7 @@ nnoremap <silent> ¬ :TmuxNavigateRight<cr>
 
 " NERD Tree File manager toggle on ctrl-b
 nnoremap <silent> <C-o> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=0
+let NERDTreeQuitOnOpen=1
 
 " Map Ctrl-p to fuzzy find files in current directory
 map <silent> <C-p> :Files<CR>
