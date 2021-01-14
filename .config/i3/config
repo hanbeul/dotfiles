@@ -172,7 +172,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 
 # Automatically start certain windows as floating
