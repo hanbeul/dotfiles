@@ -1,4 +1,4 @@
 #!/bin/sh
-sleep 1.0
-xset dpms force off
-i3lock-fancy-multimonitor -p
+xset dpms 15 30 60
+i3lock-fancy -n -p
+xset dpms 600 1200 1800
