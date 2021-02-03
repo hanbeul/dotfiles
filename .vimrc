@@ -2,6 +2,7 @@ set shell=/bin/bash
 set nocompatible
 filetype on
 syntax on
+syntax sync fromstart
 
 "-----General Settings-----
 set backspace=indent,eol,start
