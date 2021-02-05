@@ -1,4 +1,4 @@
-set EDITOR vim
+set EDITOR nvim
 set NPM_CONFIG_PREFIX $HOME/.npm-global
 set GOPATH $HOME/.go
 
