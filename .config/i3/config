@@ -244,8 +244,8 @@ gaps horizontal 300
 
 # Startup programs
 exec --no-startup-id exec /usr/bin/gwe --hide-window &
-#exec --no-startup-id exec light-locker &
 exec --no-startup-id exec polybar -r main &
 exec --no-startup-id exec polybar -r secondary &
 exec --no-startup-id exec nm-applet &
 exec --no-startup-id redshift -l 39:-77.3 &
+exec --no-startup-id xidlehook --timer 600 "xset dpms force off" "" &
