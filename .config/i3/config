@@ -248,4 +248,4 @@ exec --no-startup-id exec polybar -r main &
 exec --no-startup-id exec polybar -r secondary &
 exec --no-startup-id exec nm-applet &
 exec --no-startup-id redshift -l 39:-77.3 &
-exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 900 "xset dpms force off" "" &
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 1800 "xset dpms force off" "" &
