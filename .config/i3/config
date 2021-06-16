@@ -195,6 +195,7 @@ for_window [class="TeamViewer"] floating enable
 bindsym XF86AudioRaiseVolume exec --no-startup-id exec pulseaudio-ctl up
 bindsym XF86AudioLowerVolume exec --no-startup-id exec pulseaudio-ctl down
 bindsym XF86AudioMute exec --no-startup-id exec pulseaudio-ctl mute
+bindsym --release $mod+Control+Shift+4 exec --no-startup-id exec ~/.bin/screenshot.sh
 
 #bindsym $mod+Control+q exec --no-startup-id exec i3lock-fancy
 bindsym $mod+Control+q exec --no-startup-id exec ~/.bin/lock.sh
@@ -233,9 +234,6 @@ exec --no-startup-id exec xcalib -d :0 /home/hanbeul/Pictures/icc_profiles/x-rit
 
 
 # Set background
-#exec --no-startup-id exec feh --bg-fill ~/Pictures/spiderverse.png
-#exec --no-startup-id exec feh --bg-fill ~/Pictures/yellowstone.png
-#exec --no-startup-id exec feh --bg-fill ~/Pictures/summer_refrain.png
 exec --no-startup-id exec feh --bg-fill ~/Pictures/wallpaper.jpg
 
 gaps inner 30
@@ -246,7 +244,7 @@ gaps horizontal 300
 # Startup programs
 exec --no-startup-id exec /usr/bin/gwe --hide-window &
 exec --no-startup-id exec polybar -r main &
-exec --no-startup-id exec polybar -r secondary &
+#exec --no-startup-id exec polybar -r secondary &
 exec --no-startup-id exec nm-applet &
 exec --no-startup-id redshift -l 39:-77.3 &
 exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 1800 "xset dpms force off" "" &
