@@ -65,7 +65,7 @@ font-3 = Font Awesome 5 Free Regular:style=Regular
 
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio-control xbacklight filesystem memory cpu temperature battery date powermenu
+modules-right = pulseaudio xbacklight filesystem memory cpu temperature battery date powermenu
 
 tray-position = right
 tray-padding = 0
