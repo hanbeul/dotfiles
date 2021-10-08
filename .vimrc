@@ -15,7 +15,7 @@ set hlsearch
 set gdefault
 set autoread
 
-set termguicolors
+"set termguicolors
 
 " Make .vue files have .html rules applied to them
 let html_no_rendering=1
@@ -42,6 +42,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai' "Molokai Theme for Gui (MacVim)
 Plug 'phanviet/vim-monokai-pro'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'scrooloose/nerdtree' "Filetree Browser
 Plug 'dense-analysis/ale' "Asynchronous Linting Engine
@@ -90,6 +91,7 @@ nnoremap <silent> <leader>ag :ALEGoToDefinition<CR>
 
 " Color Schemes
 colorscheme monokai_pro
+colorscheme dracula
 "colorscheme molokai
 "if has ('gui_running')
 "  colorscheme monokai_pro
