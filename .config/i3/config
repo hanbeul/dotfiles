@@ -36,7 +36,8 @@ client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #d9d9d9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id exec /usr/local/bin/st
+#bindsym $mod+Return exec --no-startup-id exec /usr/local/bin/st
+bindsym $mod+Return exec --no-startup-id exec /usr/bin/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -232,7 +233,7 @@ exec --no-startup-id exec setxkbmap -option caps:none
 #exec --no-startup-id exec compton -b --backend glx --vsync opengl-swc
 exec --no-startup-id exec picom -b
 exec --no-startup-id exec dunst &
-exec --no-startup-id exec blueman-applet &
+exec --no-startup-id exec blueberry-tray &
 #exec --no-startup-id exec xcalib -d :0 /home/hanbeul/Documents/t540p-WQHD.icm
 exec --no-startup-id exec xcalib -d :0 /home/hanbeul/Pictures/icc_profiles/x-rite-i1pro-2.icm
 
@@ -248,7 +249,7 @@ gaps horizontal 300
 # Startup programs
 exec --no-startup-id exec /usr/bin/gwe --hide-window &
 exec --no-startup-id exec polybar -r main &
-#exec --no-startup-id exec polybar -r secondary &
+exec --no-startup-id exec polybar -r secondary &
 exec --no-startup-id exec nm-applet &
 exec --no-startup-id redshift -l 39:-77.3 &
 exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 1800 "xset dpms force off" "" &

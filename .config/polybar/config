@@ -32,14 +32,10 @@ alert = #bd2c40
 blue = #0066CC
 
 [bar/main]
-;monitor = ${env:MONITOR:HDMI-1}
-dpi-x = 0
-dpi-y = 0
+monitor = ${env:MONITOR:DP-4}
+height = 27
 enable-ipc = true
 width = 100%
-height = 36
-;offset-x = 1%
-;offset-y = 1%
 radius = 0.0
 fixed-center = false
 
@@ -58,7 +54,8 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Terminus:style=Regular:pixelsize=16
+#font-0 = Terminus:style=Regular:pixelsize=12;1
+font-0 = Spleen:style=Regular:pixelsize=14;1
 font-1 = Font Awesome 5 Brands Regular:style=Regular
 font-2 = Font Awesome 5 Free Solid:style=Solid
 font-3 = Font Awesome 5 Free Regular:style=Regular
@@ -90,11 +87,9 @@ cursor-scroll = ns-resize
 
 [bar/secondary]
 enable-ipc = true
-monitor = DP-0
+monitor = ${env:MONITOR:DP-0}
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
 radius = 0.0
 fixed-center = false
 
@@ -113,9 +108,10 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Terminus:pixelsize=12;1
-font-1 = Terminus:fontformat=truetype:size=8:antialias=false;0
-font-2 = Terminus:pixelsize=12;1
+font-0 = Terminus:style=Regular:pixelsize=12;1
+font-1 = Font Awesome 5 Brands Regular:style=Regular
+font-2 = Font Awesome 5 Free Solid:style=Solid
+font-3 = Font Awesome 5 Free Regular:style=Regular
 
 modules-left = i3
 modules-center = xwindow
@@ -125,7 +121,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+;label = %title:0:50:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
