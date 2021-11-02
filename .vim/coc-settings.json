@@ -7,5 +7,5 @@
   "list.insertMappings": {
     "<C-c>": "do:exit"
   },
-  
 }
+

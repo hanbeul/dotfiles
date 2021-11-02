@@ -30,7 +30,7 @@ if !has('nvim')
 endif
 
 " When scrolling with cursor, keeps cursor 5lines from top or bottom
-set scrolloff=10
+"set scrolloff=10
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -45,7 +45,7 @@ Plug 'phanviet/vim-monokai-pro'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'scrooloose/nerdtree' "Filetree Browser
-Plug 'dense-analysis/ale' "Asynchronous Linting Engine
+"Plug 'dense-analysis/ale' "Asynchronous Linting Engine
 
 Plug 'vim-airline/vim-airline' "Statusbar 
 "Plug 'itchyny/lightline.vim' " Statusbar
@@ -63,6 +63,7 @@ Plug 'scrooloose/nerdcommenter' " Comment code in multiple languages
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -87,7 +88,7 @@ endfunction
 
 " ALE Settings
 "let g:ale_completion_enabled = 1
-nnoremap <silent> <leader>ag :ALEGoToDefinition<CR>
+"nnoremap <silent> <leader>ag :ALEGoToDefinition<CR>
 
 " Color Schemes
 colorscheme monokai_pro
@@ -113,7 +114,7 @@ endfunction
 
 " CloseTag settings
 " Fix conflict between delimitmate and closetag
-let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.jsx,*.tsx"
+let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.jsx,*.tsx,*.js"
 au FileType xml,html,phtml,php,xhtml,js let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
