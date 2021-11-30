@@ -239,7 +239,7 @@ exec --no-startup-id exec xcalib -d :0 /home/hanbeul/Pictures/icc_profiles/x-rit
 
 
 # Set background
-exec --no-startup-id exec feh --bg-fill ~/Pictures/wallpaper.jpg
+exec --no-startup-id exec feh --bg-fill ~/.wallpaper.png
 
 gaps inner 30
 gaps outer 0
