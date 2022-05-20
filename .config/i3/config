@@ -210,32 +210,33 @@ bindsym $mod+n exec --no-startup-id exec nautilus -w
 # Scratchpad bindings
 bindsym $mod+BackSpace move scratchpad
 bindsym $mod+Tab scratchpad show
+bindsym $mod+backslash sticky toggle
 
 
 # Set Keyboard and Trackpoint settings
-exec --no-startup-id xset r rate 200 25
-exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
-exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
-exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
-exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
-exec --no-startup-id exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" +0.0
-
-exec --no-startup-id exec xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Profile Enabled" 0, 1
-exec --no-startup-id exec xinput set-prop "Logitech USB Receiver" "libinput Accel Profile Enabled" 0, 1
+#exec --no-startup-id xset r rate 200 25
+#exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+#exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+#exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+#exec --no-startup-id exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+#exec --no-startup-id exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" +0.0
+#
+#exec --no-startup-id exec xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Profile Enabled" 0, 1
+#exec --no-startup-id exec xinput set-prop "Logitech USB Receiver" "libinput Accel Profile Enabled" 0, 1
 
 # Settings for disabling screen after 10min
 #exec --no-startup-id xset dpms 600 1200 1800
 exec --no-startup-id xset dpms 0 0 0
 
 # Disable capslock key
-exec --no-startup-id exec setxkbmap -option caps:none
+#exec --no-startup-id exec setxkbmap -option caps:none
 
 #exec --no-startup-id exec compton -b --backend glx --vsync opengl-swc
 exec --no-startup-id exec picom -b
 exec --no-startup-id exec dunst &
 exec --no-startup-id exec blueberry-tray &
 #exec --no-startup-id exec xcalib -d :0 /home/hanbeul/Documents/t540p-WQHD.icm
-exec --no-startup-id exec xcalib -d :0 /home/hanbeul/Pictures/icc_profiles/x-rite-i1pro-2.icm
+#exec --no-startup-id exec xcalib -d :0 /home/hanbeul/Pictures/icc_profiles/x-rite-i1pro-2.icm
 
 
 # Set background
