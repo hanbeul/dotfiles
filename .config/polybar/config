@@ -32,7 +32,7 @@ alert = #bd2c40
 blue = #0066CC
 
 [bar/main]
-monitor = ${env:MONITOR:DP-4}
+;monitor = ${env:MONITOR:DP-4}
 height = 27
 enable-ipc = true
 width = 100%
@@ -62,7 +62,7 @@ font-3 = Font Awesome 5 Free Regular:style=Regular
 
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio xbacklight filesystem memory cpu temperature battery date powermenu
+modules-right = pulseaudio xbacklight filesystem memory cpu temperature gpu-temp battery date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -459,6 +459,11 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/gpu-temp]
+type = custom/script
+exec = ~/.bin/gpu_temp.sh
+interval = 1
 
 [module/powermenu]
 type = custom/menu
