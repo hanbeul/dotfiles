@@ -1,8 +1,9 @@
-set EDITOR nvim
-set NPM_CONFIG_PREFIX $HOME/.npm-global
-set GOPATH $HOME/.go
+set -gx EDITOR nvim
+set -gx DIFFPROG "nvim -d"
+set -gx NPM_CONFIG_PREFIX $HOME/.npm-global
+set -gx GOPATH $HOME/.go
 
-alias vim nvim
+#alias vim nvim
 
 set fish_user_paths $HOME/.bin $HOME/.npm-global/bin /var/lib/snapd/snap/bin /opt/cuda/bin $GOPATH $HOME/.cargo/bin
 
